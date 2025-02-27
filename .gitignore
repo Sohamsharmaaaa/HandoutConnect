@@ -1,0 +1,14 @@
+# Ignore Python cache & virtual environment
+__pycache__/
+venv/
+
+# Ignore database and environment files
+*.sqlite3
+*.log
+.env
+
+# Ignore Alembic migration cache
+alembic/versions/
+
+# Ignore Node.js dependencies (if any frontend uses npm)
+node_modules/
