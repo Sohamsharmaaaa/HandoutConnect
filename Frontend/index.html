@@ -5,238 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HandoutConnect - Connecting Donors with Those in Need</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Font import -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Feather icons (similar to Lucide) -->
     <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body>
     <div class="flex-col min-h-screen">
         <header class="border-b bg-primary">
             <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-                <a href="/" class="flex items-center space-x-2">
+                <a href="index.html" class="flex items-center space-x-2">
                     <i data-feather="heart" class="h-6 w-6 text-primary-foreground"></i>
                     <span class="text-xl font-bold text-primary-foreground">HandoutConnect</span>
                 </a>
                 <nav class="hidden md:flex space-x-6">
-                    <a href="/how-it-works" class="text-primary-foreground hover:text-primary-foreground-80">
-                        How It Works
-                    </a>
-                    <a href="/about" class="text-primary-foreground hover:text-primary-foreground-80">
-                        About
-                    </a>
-                    <a href="/contact" class="text-primary-foreground hover:text-primary-foreground-80">
-                        Contact
-                    </a>
+                    <a href="about.html" class="text-primary-foreground hover:text-primary-foreground-80">About</a>
+                    <a href="contact.html" class="text-primary-foreground hover:text-primary-foreground-80">Contact</a>
                 </nav>
                 <div class="flex space-x-3">
-                    <a href="login.html" class="button button-outline bg-primary-foreground text-primary hover:bg-primary-foreground-90">
-                        Login
-                    </a>
-                    <a href="register.html" class="button bg-secondary text-secondary-foreground hover:bg-secondary-90">
-                        Register
-                    </a>
+                    <a href="login.html" class="button button-outline bg-primary-foreground text-primary hover:bg-primary-foreground-90">Login</a>
+                    <a href="register.html" class="button bg-secondary text-secondary-foreground hover:bg-secondary-90">Register</a>
                 </div>
             </div>
         </header>
 
         <main class="flex-1">
-            <!-- Hero Section -->
             <section class="py-12 md:py-20 bg-gradient-to-b from-primary-20 to-background">
                 <div class="container mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
                     <div class="space-y-6">
-                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-                            Connecting Donors with Those in Need
-                        </h1>
-                        <p class="text-xl text-muted-foreground">
-                            A transparent platform that ensures your donations reach the right hands, building trust between donors and institutes helping the needy.
-                        </p>
+                        <h1 class="text-4xl md:text-5xl font-bold tracking-tight">Connecting Donors with Those in Need</h1>
+                        <p class="text-xl text-muted-foreground">A transparent platform ensuring donations reach the right hands.</p>
                         <div class="flex flex-col sm:flex-row gap-4">
-                            <a href="register.html?type=institute" class="button button-lg w-full sm:w-auto">
-                                Register as Institute
-                            </a>
-                            <a href="register.html?type=donor" class="button button-lg button-outline w-full sm:w-auto">
-                                Become a Donor
-                            </a>
-                            <a href="register.html?type=supplier" class="button button-lg button-outline w-full sm:w-auto">
-                                Join as Supplier
-                            </a>
+                            <a href="register.html?type=institute" class="button button-lg w-full sm:w-auto">Register as Institute</a>
+                            <a href="register.html?type=donor" class="button button-lg button-outline w-full sm:w-auto">Become a Donor</a>
                         </div>
                     </div>
                     <div class="relative h-400 rounded-lg overflow-hidden">
-                        <img 
-                            src="https://placehold.co/600x400" 
-                            alt="People helping those in need" 
-                            class="object-cover w-full h-full"
-                        >
-                    </div>
-                </div>
-            </section>
-
-            <!-- How It Works -->
-            <section class="py-16 bg-background">
-                <div class="container mx-auto px-4">
-                    <div class="text-center mb-12">
-                        <h2 class="text-3xl font-bold mb-4">How It Works</h2>
-                        <p class="text-muted-foreground max-w-2xl mx-auto">
-                            Our platform ensures transparency and builds trust by connecting institutes, donors, and suppliers in a secure ecosystem.
-                        </p>
-                    </div>
-                    
-                    <div class="grid md:grid-cols-3 gap-8">
-                        <div class="bg-card rounded-lg p-6 shadow-sm border">
-                            <div class="bg-primary-10 p-3 rounded-full w-fit mb-4">
-                                <i data-feather="users" class="h-6 w-6 text-primary"></i>
-                            </div>
-                            <h3 class="text-xl font-bold mb-2">Institutes Raise Requirements</h3>
-                            <p class="text-muted-foreground">
-                                Orphanages, elderly homes, and food providers specify their needs through the platform.
-                            </p>
-                        </div>
-                        
-                        <div class="bg-card rounded-lg p-6 shadow-sm border">
-                            <div class="bg-primary-10 p-3 rounded-full w-fit mb-4">
-                                <i data-feather="heart" class="h-6 w-6 text-primary"></i>
-                            </div>
-                            <h3 class="text-xl font-bold mb-2">Donors Choose Contributions</h3>
-                            <p class="text-muted-foreground">
-                                Donors select specific items and quantities to donate, like "10kg of rice" rather than cash.
-                            </p>
-                        </div>
-                        
-                        <div class="bg-card rounded-lg p-6 shadow-sm border">
-                            <div class="bg-primary-10 p-3 rounded-full w-fit mb-4">
-                                <i data-feather="shopping-bag" class="h-6 w-6 text-primary"></i>
-                            </div>
-                            <h3 class="text-xl font-bold mb-2">Suppliers Fulfill Orders</h3>
-                            <p class="text-muted-foreground">
-                                Local shops receive payments, prepare items, and deliver them directly to institutes.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-12 text-center">
-                        <a href="/how-it-works" class="button button-outline group">
-                            Learn More
-                            <i data-feather="arrow-right" class="ml-2 h-4 w-4 group-hover-translate-x-1 transition-transform"></i>
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Trust & Transparency -->
-            <section class="py-16 bg-muted">
-                <div class="container mx-auto px-4">
-                    <div class="text-center mb-12">
-                        <h2 class="text-3xl font-bold mb-4">Trust & Transparency</h2>
-                        <p class="text-muted-foreground max-w-2xl mx-auto">
-                            We've built safeguards into our platform to ensure donations are used properly and efficiently.
-                        </p>
-                    </div>
-                    
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div class="bg-card rounded-lg p-6 shadow-sm border">
-                            <div class="flex items-start gap-4">
-                                <div class="bg-primary-10 p-3 rounded-full">
-                                    <i data-feather="shield" class="h-6 w-6 text-primary"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-bold mb-2">No Direct Cash Transfers</h3>
-                                    <p class="text-muted-foreground">
-                                        Money is sent directly to verified suppliers, ensuring funds are used only for intended purposes.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="bg-card rounded-lg p-6 shadow-sm border">
-                            <div class="flex items-start gap-4">
-                                <div class="bg-primary-10 p-3 rounded-full">
-                                    <i data-feather="trending-up" class="h-6 w-6 text-primary"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-bold mb-2">Anti-Cartelization Measures</h3>
-                                    <p class="text-muted-foreground">
-                                        Large donations are distributed among different shops, and consumption patterns are monitored to prevent fraud.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- CTA Section -->
-            <section class="py-16 bg-primary text-primary-foreground">
-                <div class="container mx-auto px-4 text-center">
-                    <h2 class="text-3xl font-bold mb-6">Ready to Make a Difference?</h2>
-                    <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-                        Join our platform today and be part of a transparent ecosystem that helps those in need.
-                    </p>
-                    <div class="flex flex-col sm:flex-row justify-center gap-4">
-                        <a href="register.html?type=institute" class="button button-lg button-secondary w-full sm:w-auto">
-                            Register as Institute
-                        </a>
-                        <a href="register.html?type=donor" class="button button-lg button-outline bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground-10 w-full sm:w-auto">
-                            Become a Donor
-                        </a>
+                        <img src="https://placehold.co/600x400" alt="Helping hands" class="object-cover w-full h-full">
                     </div>
                 </div>
             </section>
         </main>
 
         <footer class="bg-muted py-12 border-t">
-            <div class="container mx-auto px-4">
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                    <div>
-                        <a href="/" class="flex items-center space-x-2 mb-4">
-                            <i data-feather="heart" class="h-6 w-6 text-primary"></i>
-                            <span class="text-xl font-bold">HandoutConnect</span>
-                        </a>
-                        <p class="text-muted-foreground">
-                            Building trust between donors and institutes helping the needy.
-                        </p>
-                    </div>
-                    
-                    <div>
-                        <h3 class="font-bold mb-4">Quick Links</h3>
-                        <ul class="space-y-2">
-                            <li><a href="/how-it-works" class="text-muted-foreground hover:text-foreground">How It Works</a></li>
-                            <li><a href="/about" class="text-muted-foreground hover:text-foreground">About Us</a></li>
-                            <li><a href="/contact" class="text-muted-foreground hover:text-foreground">Contact</a></li>
-                            <li><a href="/faq" class="text-muted-foreground hover:text-foreground">FAQ</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <h3 class="font-bold mb-4">For Users</h3>
-                        <ul class="space-y-2">
-                            <li><a href="register.html?type=institute" class="text-muted-foreground hover:text-foreground">Institutes</a></li>
-                            <li><a href="register.html?type=donor" class="text-muted-foreground hover:text-foreground">Donors</a></li>
-                            <li><a href="register.html?type=supplier" class="text-muted-foreground hover:text-foreground">Suppliers</a></li>
-                            <li><a href="login.html" class="text-muted-foreground hover:text-foreground">Login</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <h3 class="font-bold mb-4">Legal</h3>
-                        <ul class="space-y-2">
-                            <li><a href="/terms" class="text-muted-foreground hover:text-foreground">Terms of Service</a></li>
-                            <li><a href="/privacy" class="text-muted-foreground hover:text-foreground">Privacy Policy</a></li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="border-t mt-8 pt-8 text-center text-muted-foreground">
-                    <p>&copy; <script>document.write(new Date().getFullYear())</script> HandoutConnect. All rights reserved.</p>
-                </div>
+            <div class="container mx-auto px-4 text-center">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> HandoutConnect. All rights reserved.</p>
             </div>
         </footer>
     </div>
 
     <script>
-        // Initialize Feather icons
         feather.replace();
+
+        // Check backend API status
+        async function checkBackend() {
+            try {
+                let response = await fetch("http://127.0.0.1:8000/");
+                if (response.ok) {
+                    console.log("Backend is running.");
+                } else {
+                    console.warn("Backend might be down.");
+                }
+            } catch (error) {
+                console.error("Backend connection error.");
+            }
+        }
+        checkBackend();
     </script>
 </body>
 </html>

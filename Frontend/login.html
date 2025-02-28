@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - HandoutConnect</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Font import -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Feather icons (similar to Lucide) -->
     <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body>
@@ -33,70 +31,25 @@
                     
                     <div class="text-center mb-6">
                         <h1 class="text-2xl font-bold">Login to Your Account</h1>
-                        <p class="text-muted-foreground mt-2">
-                            Welcome back! Please enter your credentials to continue.
-                        </p>
+                        <p class="text-muted-foreground mt-2">Welcome back! Please enter your credentials to continue.</p>
                     </div>
                     
                     <form id="loginForm" class="space-y-4">
                         <div>
-                            <label for="email" class="block text-sm font-medium mb-1">
-                                Email Address
-                            </label>
-                            <input
-                                id="email"
-                                name="email"
-                                type="email"
-                                required
-                                class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-                            />
+                            <label for="email" class="block text-sm font-medium mb-1">Email Address</label>
+                            <input id="email" type="email" required class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary" />
                         </div>
                         
                         <div>
-                            <label for="password" class="block text-sm font-medium mb-1">
-                                Password
-                            </label>
-                            <input
-                                id="password"
-                                name="password"
-                                type="password"
-                                required
-                                class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-                            />
+                            <label for="password" class="block text-sm font-medium mb-1">Password</label>
+                            <input id="password" type="password" required class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary" />
                         </div>
                         
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center">
-                                <input
-                                    id="remember-me"
-                                    name="remember-me"
-                                    type="checkbox"
-                                    class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
-                                />
-                                <label for="remember-me" class="ml-2 block text-sm text-muted-foreground">
-                                    Remember me
-                                </label>
-                            </div>
-                            
-                            <div class="text-sm">
-                                <a href="/forgot-password" class="text-primary hover:underline">
-                                    Forgot your password?
-                                </a>
-                            </div>
-                        </div>
-                        
-                        <button type="submit" class="button w-full">
-                            Sign In
-                        </button>
+                        <button type="submit" class="button w-full">Sign In</button>
                     </form>
                     
                     <div class="mt-6 text-center text-sm">
-                        <p class="text-muted-foreground">
-                            Don't have an account?
-                            <a href="register.html" class="text-primary hover:underline">
-                                Register
-                            </a>
-                        </p>
+                        <p class="text-muted-foreground">Don't have an account? <a href="register.html" class="text-primary hover:underline">Register</a></p>
                     </div>
                 </div>
             </div>
@@ -104,21 +57,40 @@
     </div>
 
     <script>
-        // Initialize Feather icons
-        feather.replace();
-
-        // Form submission
-        document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('loginForm').addEventListener('submit', function(e) {
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("loginForm").addEventListener("submit", async function(e) {
                 e.preventDefault();
-                
-                // In a real app, this would authenticate with a server
-                alert('Login successful! This is a demo, so no actual login occurred.');
-                
-                // Redirect to dashboard in a real app
-                // window.location.href = 'dashboard.html';
+        
+                const formData = {
+                    email: document.getElementById("email").value,
+                    password: document.getElementById("password").value
+                };
+        
+                try {
+                    const response = await fetch("http://localhost:5000/api/auth/login", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(formData)
+                    });
+        
+                    const result = await response.json();
+        
+                    if (!response.ok) {
+                        throw new Error(result.message || "Login failed");
+                    }
+        
+                    alert("✅ " + result.message);
+                    localStorage.setItem("token", result.token);  // Store token
+                    window.location.href = "dashboard.html";  // Redirect to dashboard
+        
+                } catch (error) {
+                    console.error("Error:", error);
+                    alert("❌ " + error.message);
+                }
             });
         });
-    </script>
+        </script>
+        
+    
 </body>
 </html>
